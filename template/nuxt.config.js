@@ -1,4 +1,10 @@
 module.exports = {
+  /**
+   * 如果放置的空間在資料夾內請修改 base
+   */
+  router: {
+    base: '/'
+  },
   /*
   ** Headers of the page
   */
