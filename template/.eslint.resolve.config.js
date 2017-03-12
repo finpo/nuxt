@@ -1,7 +1,7 @@
-const path = require('path');
+const { join } = require('path');
 
 function resolve(dir) {
-  return path.join(__dirname, dir);
+  return join(__dirname, dir);
 }
 /**
  * 設定 webpack import 前綴解析真實路徑
