@@ -6,17 +6,18 @@ section.container
   nuxt-link.button(to="/") Home Page
 </template>
 {{{{/raw}}}}
+
 <script>
 export default {
-  data ({ req }) {
-    return {}
+  data() {
+    return {};
   },
-  head () {
+  head() {
     return {
-      title: `About Page (${this.name}-side)`
-    }
-  }
-}
+      title: `About Page (${this.name}-side)`,
+    };
+  },
+};
 </script>
 
 <style scoped>

@@ -8,10 +8,11 @@ section.container
 
 </template>
 {{{{/raw}}}}
+
 <script>
 export default {
-  props: ['error']
-}
+  props: ['error'],
+};
 </script>
 
 <style scoped>
