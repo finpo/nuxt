@@ -1,5 +1,4 @@
-<template>
-  <footer>
-    Visit our website for more documentation : <a href="https://nuxtjs.org" target="_blank">nuxtjs.org</a>
-  </footer>
+<template lang="pug">
+footer All Rights Reserved.Web Design By 
+  a(href="//www.finpo.com.tw", target="_blank") Finpo Design.
 </template>
