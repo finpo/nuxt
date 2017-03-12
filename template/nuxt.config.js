@@ -21,7 +21,7 @@ module.exports = {
       { hid: 'description', name: 'description', content: '{{ description }}' },
     ],
     script: [
-      { src: 'vendor/sniffjs/sniff.js' },
+      { src: '/vendor/sniffjs/sniff.js' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
