@@ -2,7 +2,7 @@
 section.container
   img.logo(src="../assets/img/logo.png", alt="Nuxt.js Logo")
   h1.title Universal Vue.js Application Framework
-  nuxt-link.button(to="/about")
+  nuxt-link.button(to="/about") About page
 
 </template>
 
