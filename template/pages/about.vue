@@ -2,7 +2,7 @@
 <template lang="pug">
 section.container
   img.logo(src="../assets/img/logo.png", alt="Nuxt.js Logo")
-  h1.title This page is loaded from the {{ name }}
+  h1.title This is About page
   nuxt-link.button(to="/") Home Page
 </template>
 {{{{/raw}}}}
