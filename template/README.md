@@ -13,7 +13,6 @@ $ yarn run dev
 
 # generate static project
 $ yarn run build
-$ yarn start
 
 # generate static project
 $ yarn run generate
