@@ -20,9 +20,7 @@ module.exports = {
       { hid: 'keyword', name: 'keyword', content: '{{ name }}' },
       { hid: 'description', name: 'description', content: '{{ description }}' },
     ],
-    script: [
-      { src: '/vendor/sniffjs/sniff.js' },
-    ],
+    script: [],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
     ],
@@ -56,4 +54,5 @@ module.exports = {
       }
     },
   },
+  plugins: ['~plugins/sniff.js'],
 };

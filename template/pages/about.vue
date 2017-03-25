@@ -9,9 +9,6 @@ section
 
 <script>
 export default {
-  data() {
-    return {};
-  },
   head() {
     return {
       title: 'About Page - sitename',
