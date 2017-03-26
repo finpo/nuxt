@@ -54,5 +54,5 @@ module.exports = {
       }
     },
   },
-  plugins: ['~plugins/sniff.js'],
+  plugins: [],
 };
