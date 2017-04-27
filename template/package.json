@@ -1,6 +1,9 @@
 {
   "name": "{{ name }}",
   "version": "1.0.0",
+  "engines": {
+    "node": "7"
+  },
   "description": "{{ description }}",
   "author": "{{ author }}",
   "private": true,
