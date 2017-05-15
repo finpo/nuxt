@@ -1,0 +1,41 @@
+variables:
+  APPNAME: ''
+  DEMO_URL: 'demo.finpo.com.tw'
+  PRODUCTION_URL: 'alpaca.finpo.com.tw'
+
+image: node:latest
+
+build_test:
+  script:
+    - yarn
+    - yarn lint
+    - yarn build
+  except:
+    - deploy
+
+# deploy_demo:
+#   script:
+#   - mkdir -p ~/.ssh
+#   - echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
+#   - chmod 600 ~/.ssh/id_rsa
+#   - ssh-keyscan -H 'demo.finpo.com.tw' >> ~/.ssh/known_hosts
+#   - git config --global user.name "gitlab"
+#   - git config --global user.email "gitlab@finpo.com.tw"
+#   - 'echo -e "User-agent: *\nDisallow: /\n" > static/robots.txt'
+#   - git add -A
+#   - git commit -m "add robots.txt"
+#   - NEW_COMMIT_ID=`git log --format="%H" -n 1`
+#   - git push dokku@${DEMO_URL}:${APPNAME} ${NEW_COMMIT_ID}:refs/heads/master -f
+#   only:
+#     - master
+
+# deploy_production:
+#   script:
+#   - mkdir -p ~/.ssh
+#   - echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
+#   - chmod 600 ~/.ssh/id_rsa
+#   - ssh-keyscan -H 'alpaca.finpo.com.tw' >> ~/.ssh/known_hosts
+#   - git push dokku@${PRODUCTION_URL}:${APPNAME} ${CI_COMMIT_SHA}:refs/heads/master -f
+#   only:
+#     - deploy
+
