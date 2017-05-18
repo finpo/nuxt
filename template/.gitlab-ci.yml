@@ -5,7 +5,20 @@ variables:
 
 image: node:latest
 
-build_test:
+stages:
+  - test
+  # - deploy_preview
+  # - deploy_production
+
+cache:
+  untracked: true
+  key: "$CI_PROJECT_ID"
+  paths:
+    - node_modules/
+    - .yarn
+
+test:
+  stage: test
   script:
     - yarn
     - yarn lint
@@ -13,7 +26,8 @@ build_test:
   except:
     - deploy
 
-# deploy_demo:
+# deploy_review:
+#   stage: deploy_preview
 #   script:
 #   - mkdir -p ~/.ssh
 #   - echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
@@ -30,6 +44,7 @@ build_test:
 #     - master
 
 # deploy_production:
+#   stage: deploy_production
 #   script:
 #   - mkdir -p ~/.ssh
 #   - echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
