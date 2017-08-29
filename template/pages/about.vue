@@ -3,7 +3,6 @@
 section
   h1 this is about page
   p about dummy about dummy about dummy about dummy 
-
 </template>
 {{{{/raw}}}}
 
