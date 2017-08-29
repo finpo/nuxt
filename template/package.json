@@ -23,10 +23,12 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "serverbuild": "nuxt build",
-    "lint": "eslint --ext .js,.vue --ignore-path .eslintignore .",
+    "lint": "pug-lint-vue pages && eslint --ext .js,.vue --ignore-path .eslintignore .",
     "precommit": "npm run lint"
   },
   "devDependencies": {
+    "@finpo/pug-lint-config-finpo": "^1.0.2",
+    "pug-lint-vue": "^0.1.3",
     "babel-eslint": "^7.2.3",
     "eslint": "^4.4.1",
     "eslint-config-airbnb-base": "^11.3.1",
