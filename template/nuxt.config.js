@@ -17,7 +17,7 @@ module.exports = {
       { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' },
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'keyword', name: 'keyword', content: '{{ name }}' },
+      { hid: 'keywords', name: 'keywords', content: '{{ name }}' },
       { hid: 'description', name: 'description', content: '{{ description }}' },
     ],
     script: [],
