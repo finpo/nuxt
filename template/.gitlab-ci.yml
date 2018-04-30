@@ -3,7 +3,7 @@ variables:
   DEMO_URL: 'demo.finpo.com.tw'
   PRODUCTION_URL: 'alpaca.finpo.com.tw'
 
-image: node:latest
+image: node:8
 
 stages:
   - test
