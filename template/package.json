@@ -2,7 +2,8 @@
   "name": "{{ name }}",
   "version": "1.0.0",
   "engines": {
-    "node": ">=8"
+    "node": "8",
+    "yarn": "1.5"
   },
   "license": "MIT",
   "description": "{{ description }}",
