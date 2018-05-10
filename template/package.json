@@ -1,9 +1,9 @@
 {
-  "name": "up-nuxt",
+  "name": "{{ name }}",
   "version": "1.0.0",
   "license": "MIT",
-  "description": "FINPO project",
-  "author": "Ausir <ausir@finpo.com.tw>",
+  "description": "{{ description }}",
+  "author": "{{ author }}",
   "private": true,
   "dependencies": {
     "bootstrap": "4.1.1",

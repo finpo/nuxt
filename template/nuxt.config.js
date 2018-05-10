@@ -12,13 +12,13 @@ module.exports = {
     htmlAttrs: {
       lang: 'zh-Hant',
     },
-    title: 'up-nuxt',
+    title: '{{ name }}',
     meta: [
       { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' },
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'keywords', name: 'keywords', content: 'up-nuxt' },
-      { hid: 'description', name: 'description', content: 'FINPO project' },
+      { hid: 'keywords', name: 'keywords', content: '{{ name }}' },
+      { hid: 'description', name: 'description', content: '{{ description }}' },
     ],
     script: [],
     link: [
