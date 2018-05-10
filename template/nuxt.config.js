@@ -12,13 +12,13 @@ module.exports = {
     htmlAttrs: {
       lang: 'zh-Hant',
     },
-    title: '{{ name }}',
+    title: 'up-nuxt',
     meta: [
       { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' },
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'keywords', name: 'keywords', content: '{{ name }}' },
-      { hid: 'description', name: 'description', content: '{{ description }}' },
+      { hid: 'keywords', name: 'keywords', content: 'up-nuxt' },
+      { hid: 'description', name: 'description', content: 'FINPO project' },
     ],
     script: [],
     link: [
@@ -29,8 +29,9 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    { src: '~assets/css/bs4.scss', lang: 'scss' },
-    { src: '~assets/css/main.styl', lang: 'stylus' },
+    { src: 'bootstrap/dist/css/bootstrap-reboot.css' },
+    { src: 'bootstrap/dist/css/bootstrap-grid.css' },
+    { src: '~/assets/css/main.styl', lang: 'stylus' },
   ],
   /*
   ** Customize the progress-bar color
@@ -43,8 +44,8 @@ module.exports = {
     /*
     ** Run ESLINT on save
     */
-    extend(config, ctx) {
-      if (ctx.isClient) {
+    extend(config, { isDev, isClient }) {
+      if (isDev && isClient) {
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,

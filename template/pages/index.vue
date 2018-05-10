@@ -1,7 +1,7 @@
 <template lang="pug">
 section
   h1 this is index page
-  p.hidden-sm-down index dummy index dummy index dummy index dummy 
+  p index dummy index dummy index dummy index dummy
 </template>
 
 <script>

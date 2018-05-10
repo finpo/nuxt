@@ -1,14 +1,19 @@
 module.exports = {
   root: true,
-  parser: 'babel-eslint',
   env: {
     browser: true,
     node: true
   },
-  extends: 'airbnb-base',
+  parserOptions: {
+    parser: 'babel-eslint'
+  },
+  extends: [
+    'airbnb-base',
+    'plugin:vue/essential',
+  ],
   // required to lint *.vue files
   plugins: [
-    'html'
+    'vue'
   ],
   // 強制檢查 import 可以被正確解析 
   settings: {

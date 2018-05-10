@@ -2,12 +2,6 @@
 .container
   .row
     h1 FINPO nuxt starter
-  .row
-    ul
-      li
-        nuxt-link(to="/") Home
-      li
-        nuxt-link(to="/about") About
   nuxt
   my-footer
 </template>
