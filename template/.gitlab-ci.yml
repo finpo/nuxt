@@ -15,14 +15,13 @@ cache:
   key: "$CI_PROJECT_ID"
   paths:
     - node_modules/
-    - .yarn
 
 test:
   stage: test
   script:
-    - yarn
-    - yarn lint
-    - yarn build
+    - npm install
+    - npm run lint
+    - npm run build
   except:
     - deploy
 
