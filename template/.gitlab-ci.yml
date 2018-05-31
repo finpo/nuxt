@@ -8,12 +8,12 @@ stages:
   # - preview
   # - production
 
-cache:
-  untracked: true
-  key: "$CI_PROJECT_ID"
-  paths:
-    - node_modules/
-    - .yarn
+# cache:
+#   untracked: true
+#   key: "$CI_PROJECT_ID"
+#   paths:
+#     - node_modules/
+#     - .yarn
 
 test:
   image: node:10-alpine
