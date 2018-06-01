@@ -38,5 +38,8 @@
     "pug-loader": "^2.4.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2"
+  },
+  "resolutions": {
+    "vue-loader": "13.7.2"
   }
 }
