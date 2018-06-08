@@ -3,29 +3,36 @@ variables:
   DEMO_URL: 'demo.finpo.com.tw'
   PRODUCTION_URL: 'alpaca.finpo.com.tw'
 
+image: node:10-alpine
+
+cache:
+  paths:
+  - node_modules/
+  
 stages:
+  - install
   - test
-  # - preview
-  # - production
+  - review
+  - production
 
-# cache:
-#   untracked: true
-#   key: "$CI_PROJECT_ID"
-#   paths:
-#     - node_modules/
-#     - .yarn
-
-test:
-  image: node:10-alpine
-  stage: test
+build:
+  stage: install
   script:
     - yarn install
+
+test_1_lint:
+  stage: test
+  script:
     - yarn run lint
+
+test_2_build:
+  stage: test
+  script:
     - yarn run build
 
-# preview:
+# review:
 #   image: docker:git
-#   stage: preview
+#   stage: review
 #   services:
 #     - docker:dind
 #   script:
@@ -33,13 +40,10 @@ test:
 #   - echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
 #   - chmod 600 ~/.ssh/id_rsa
 #   - ssh-keyscan -H ${DEMO_URL} >> ~/.ssh/known_hosts
-#   - git config --global user.name "gitlab"
-#   - git config --global user.email "gitlab@finpo.com.tw"
 #   - 'echo -e "User-agent: *\nDisallow: /\n" > static/robots.txt'
-#   - docker build -t dokku/${APPNAME}:latest . && docker save dokku/${APPNAME}:latest | ssh ausir@${DEMO_URL} "sudo docker load && dokku tags:deploy ${APPNAME} latest"
+#   - docker build --build-arg ENV_FILE=${CI_JOB_STAGE} -t dokku/${APPNAME}:latest . && docker save dokku/${APPNAME}:latest | ssh ausir@${DEMO_URL} "sudo docker load && dokku tags:deploy ${APPNAME} latest"
 #   only:
 #     - master
-
 
 # production:
 #   image: docker:git
@@ -51,7 +55,6 @@ test:
 #   - echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
 #   - chmod 600 ~/.ssh/id_rsa
 #   - ssh-keyscan -H ${PRODUCTION_URL} >> ~/.ssh/known_hosts
-#   - docker build -t dokku/${APPNAME}:latest . && docker save dokku/${APPNAME}:latest | ssh ausir@${PRODUCTION_URL} "sudo docker load && dokku tags:deploy ${APPNAME} latest"
+#   - docker build --build-arg ENV_FILE=${CI_JOB_STAGE} -t dokku/${APPNAME}:latest . && docker save dokku/${APPNAME}:latest | ssh ausir@${PRODUCTION_URL} "sudo docker load && dokku tags:deploy ${APPNAME} latest"
 #   only:
-#     - deploy
-
+#     - production
