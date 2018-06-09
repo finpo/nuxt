@@ -23,11 +23,13 @@ build:
 test_1_lint:
   stage: test
   script:
+    - yarn install
     - yarn run lint
 
 test_2_build:
   stage: test
   script:
+    - yarn install
     - yarn run build
 
 # review:
