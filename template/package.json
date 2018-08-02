@@ -6,8 +6,8 @@
   "author": "{{ author }}",
   "private": true,
   "dependencies": {
-    "bootstrap": "4.1.1",
-    "nuxt": "1.4.1"
+    "bootstrap": "4.1.3",
+    "nuxt": "1.4.2"
   },
   "config": {
     "nuxt": {
