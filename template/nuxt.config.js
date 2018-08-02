@@ -51,6 +51,10 @@ module.exports = {
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
           exclude: /(node_modules)/,
+          options: {
+            /* eslint import/no-extraneous-dependencies: ["error", {"peerDependencies": true}] */
+            formatter: require('eslint-friendly-formatter'), // eslint-disable-line global-require
+          },
         });
       }
     },
